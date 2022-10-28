@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2022 at 05:29 PM
+-- Generation Time: Oct 28, 2022 at 05:15 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
 
@@ -74,18 +74,19 @@ CREATE TABLE `tb_product` (
   `product_description` text NOT NULL,
   `product_image` varchar(100) NOT NULL,
   `product_status` tinyint(1) NOT NULL,
-  `date_created` timestamp NOT NULL DEFAULT current_timestamp()
+  `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
+  `tgl_upload` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_product`
 --
 
-INSERT INTO `tb_product` (`product_id`, `category_id`, `product_name`, `product_price`, `product_description`, `product_image`, `product_status`, `date_created`) VALUES
-(9, 3, 'Color Sky Cream', 75000, '<p>Ingredients :</p>', 'images1666451152.jpg', 0, '2021-11-05 02:57:20'),
-(10, 2, 'Mary Style Mascara', 60000, '<p>Ingredients :</p>', 'images1666451084.jpg', 1, '2021-11-05 02:59:39'),
-(11, 1, 'Ladies Lotion', 90000, '<p>Ingredients :</p>', 'images1666451021.jpg', 0, '2021-11-05 03:01:27'),
-(12, 4, 'Pink Lipstick', 87000, '<p>Ingredients :</p>\r\n', 'images1666447162.jpg', 1, '2021-11-05 03:03:59');
+INSERT INTO `tb_product` (`product_id`, `category_id`, `product_name`, `product_price`, `product_description`, `product_image`, `product_status`, `date_created`, `tgl_upload`) VALUES
+(9, 3, 'Color Sky Cream', 75000, '<p>Ingredients :</p>', 'images1666451152.jpg', 0, '2021-11-05 02:57:20', ''),
+(10, 2, 'Mary Style Mascara', 60000, '<p>Ingredients :</p>', 'images1666451084.jpg', 1, '2021-11-05 02:59:39', ''),
+(11, 1, 'Ladies Lotion', 90000, '<p>Ingredients :</p>', 'images1666451021.jpg', 0, '2021-11-05 03:01:27', ''),
+(12, 4, 'Pink Lipstick', 87000, '<p>Ingredients :</p>\r\n', 'images1666447162.jpg', 1, '2021-11-05 03:03:59', '');
 
 --
 -- Indexes for dumped tables
@@ -130,7 +131,7 @@ ALTER TABLE `tb_category`
 -- AUTO_INCREMENT for table `tb_product`
 --
 ALTER TABLE `tb_product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
