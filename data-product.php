@@ -48,7 +48,7 @@
 							<td>Rp. <?php echo number_format($row['product_price']) ?></td>
 							<td><a href="images/<?php echo $row['product_image'] ?>" target="_blank"> <img src="images/<?php echo $row['product_image'] ?>" width="200px"> </a></td>
 							<td><?php echo ($row['product_status'] == 0)? 'Out of Stock':'Ready'; ?></td>
-							<td><?php echo $row['tgl_upload'] ?></td>
+							<td><?php echo $row['date_created'] ?></td>
 							<td>
 								<a href="edit-product.php?id=<?php echo $row['product_id'] ?>">Edit</a> || <a href="proses-hapus.php?idp=<?php echo $row['product_id'] ?>" onclick="return confirm('Are You Sure to Delete ?')">Delete</a>
 							</td>
